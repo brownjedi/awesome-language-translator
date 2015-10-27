@@ -2,8 +2,10 @@
 
 const express = require('express');
 const watson = require('watson-developer-cloud');
+const twilio = require('twilio');
 const vCapServices = require('./../utilities/bluemix');
 
+let client = new twilio.RestClient(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 let router = express.Router();
 
 let languageTranslation = watson.language_translation({
@@ -54,6 +56,10 @@ router.get('/synthesize', (req, res) => {
 		next(error);
 	});
 	transcript.pipe(res);
+});
+
+router.post('/twilio/sms/response', (req, res) => {
+
 });
 
 module.exports = router;

@@ -1,3 +1,4 @@
 node_modules/
 config/vcap_services.json
+config/twilio.json
 

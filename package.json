@@ -19,11 +19,13 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.14.1",
+    "cookie-parser": "^1.4.0",
     "errorhandler": "^1.4.2",
     "express": "^4.13.3",
     "morgan": "^1.6.1",
     "superagent": "^1.4.0",
     "swig": "^1.4.2",
+    "twilio": "^2.5.1",
     "watson-developer-cloud": "^0.10.6"
   }
 }
