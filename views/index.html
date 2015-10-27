@@ -1,0 +1,89 @@
+{% extends 'layout.html' %} {% block title %}Awesome Language Translator{% endblock %} {% block head %} {% parent %}
+<link rel="stylesheet" href="stylesheets/style.css" />
+<script type="text/javascript" src="scripts/app.js"></script>
+{% endblock %} {% block content %}
+<div class="demo-blog mdl-layout mdl-js-layout">
+	<main class="mdl-layout__content">
+		<div class="demo-blog__posts mdl-grid">
+			<div class="mdl-card something-else mdl-cell mdl-cell--6-col mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+				<button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" id="source-translate">
+					<i class="material-icons mdl-color-text--white" role="presentation">keyboard_return</i>
+					<span class="visuallyhidden">Translate text</span>
+				</button>
+				<div class="mdl-tooltip" for="source-translate">
+					Translate text
+				</div>
+				<div class="mdl-card__media mdl-color--white mdl-color-text--grey-600">
+					<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--accent" id="source-speech">
+						<i class="material-icons mdl-color-text--white" role="presentation">mic</i>
+						<span class="visuallyhidden">speech to text</span>
+					</button>
+					<div class="mdl-textfield mdl-js-textfield">
+						<textarea class="mdl-textfield__input" type="text" rows="18" id="source-textarea"></textarea>
+						<label class="mdl-textfield__label" for="source-textarea">Type text to translate...</label>
+					</div>
+				</div>
+				<div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
+					<button id="source-language-menu" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+						<i class="material-icons" role="presentation">more_vert</i>
+						<span class="visuallyhidden">show menu</span>
+					</button>
+					<div>
+						<strong id="source-language-selection">English</strong>
+					</div>
+					<ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="source-language-menu" id="source-language-list">
+						<li class="mdl-menu__item">Detect Language</li>
+						<li class="mdl-menu__item">English</li>
+						<li class="mdl-menu__item">Spanish</li>
+						<li class="mdl-menu__item">French</li>
+						<li class="mdl-menu__item">Portuguese</li>
+						<li class="mdl-menu__item">Arabic</li>
+					</ul>
+				</div>
+			</div>
+			<div class="mdl-card something-else mdl-cell mdl-cell--6-col mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+				<button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" id="target-speech">
+					<i class="material-icons mdl-color-text--white" role="presentation">play_arrow</i>
+					<span class="visuallyhidden">Listen to translated text</span>
+				</button>
+				<div class="mdl-tooltip" for="target-speech">
+					Listen to the translated text (Only available for English, Spanish and French)
+				</div>
+				<div class="mdl-card__media mdl-color--white mdl-color-text--grey-600">
+					<div class="mdl-textfield mdl-js-textfield">
+						<textarea class="mdl-textfield__input" type="text" rows="18" id="target-textarea" disabled></textarea>
+						<!-- <label class="mdl-textfield__label" for="target-textarea">Translated text will appear here...</label> -->
+					</div>
+				</div>
+				<div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
+					<button id="target-language-menu" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+						<i class="material-icons" role="presentation">more_vert</i>
+						<span class="visuallyhidden">show menu</span>
+					</button>
+					<div>
+						<strong id="target-language-selection">Spanish</strong>
+					</div>
+					<ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="target-language-menu" id="target-language-list">
+						<li class="mdl-menu__item">English</li>
+						<li class="mdl-menu__item">Spanish</li>
+						<li class="mdl-menu__item">French</li>
+						<li class="mdl-menu__item">Portuguese</li>
+						<li class="mdl-menu__item">Arabic</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</main>
+	<div class="mdl-layout__obfuscator"></div>
+	<audio class="audio" controls>
+		Your browser does not support the audio element.
+	</audio>
+	<video autoplay></video>
+	<button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab" id="help-button">
+		<i class="material-icons mdl-color-text--white" role="presentation">help_outline</i>
+		<span class="visuallyhidden">help_outline</span>
+	</button>
+	<div class="help-screen">
+	</div>
+</div>
+{% endblock %}
