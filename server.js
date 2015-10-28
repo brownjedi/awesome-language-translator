@@ -4,14 +4,8 @@
 // and set the VCAP_SERVICES environment variable locally
 if(!process.env.VCAP_APPLICATION) {
 	let vCapServicesJSON = require('./config/vcap_services.json');
-	let twilioJSON = require('./config/twilio.json');
 	if(vCapServicesJSON)
 		process.env.VCAP_SERVICES = JSON.stringify(vCapServicesJSON);
-
-	if(twilioJSON) {
-		process.env.TWILIO_ACCOUNT_SID = twilioJSON.TWILIO_ACCOUNT_SID
-		process.env.TWILIO_AUTH_TOKEN = twilioJSON.TWILIO_AUTH_TOKEN
-	}
 }
 
 const express = require('express');

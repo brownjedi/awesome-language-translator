@@ -1,5 +1,5 @@
 applications:
-- name: awesome-language-translator
+- name: awesome-language-translator-demo
   path: .
   command: npm start
   memory: 128M
